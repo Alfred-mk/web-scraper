@@ -26,6 +26,8 @@ func main() {
 
 	c := colly.NewCollector(colly.AllowedDomains("www.trackingdifferences.com", "trackingdifferences.com"))
 
+	c.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
 	c.OnRequest(func(r *colly.Request) {
 		r.Headers.Set("Accept-Language", "en-US;q=0.9")
 		fmt.Printf("Visiting %s\n", r.URL)
